@@ -34,7 +34,7 @@ void FFT(float *xin_real, float *xin_imag)
     //struct compx u,w,t;
 
 /*********************************/
-	float t_real, t_imag;
+    float t_real, t_imag;
     float u_real, u_imag;
     float w_real, w_imag;
 /*********************************/
@@ -50,7 +50,7 @@ void FFT(float *xin_real, float *xin_imag)
             //xin[j] = xin[i];
             //xin[i] = t;
 /***************************************/
-			t_real = xin_real[j];
+	    t_real = xin_real[j];
             xin_real[j] = xin_real[i];
             xin_real[i] = t_real;
 /***************************************/
@@ -76,7 +76,7 @@ void FFT(float *xin_real, float *xin_imag)
             le = 2 << (m - 1);                            //le蝶形結距離，即第m級蝶形的蝶形結相距le點
             lei = le / 2;                               //同一蝶形結中參加運算的兩點的距離
             
-			//u.real = 1.0;                             //u為蝶形結運算系數，初始值為1
+	    //u.real = 1.0;                             //u為蝶形結運算系數，初始值為1
             //u.imag = 0.0;
             //w.real = cos(PI / lei);                     //w為系數商，即當前系數與前一個系數的商
             //w.imag = -sin(PI / lei);
@@ -105,7 +105,7 @@ void FFT(float *xin_real, float *xin_imag)
 
                 //u = EE(u, w);                           //改變系數，進行下一個蝶形運算
 /***************************************/
-				u_real = u_real *w_real - u_imag *w_imag;
+	        u_real = u_real *w_real - u_imag *w_imag;
                 u_imag = u_real *w_imag + u_imag *w_real;
 /***************************************/
             }
@@ -121,7 +121,7 @@ QVector<double> mathtools::SPG(QVector<double> datainput)
     //int chs = 5*log2(FFT_N/4);
 
 /***************************************/
-	int chs;
+    int chs;
     int f = FFT_N/4;
     // calculate chs's value, equal "chs = 5*log2(FFT_N/4)"
     for(chs = 1; (f=f/2)!=1; chs++)
