@@ -1,3 +1,10 @@
+/*************************
+ * use Linux base OS to run this program
+ * sudo ./SPGdisplay
+ * ************************/
+
+
+
 #include "dialog.h"
 
 #include <QApplication>
